@@ -1,0 +1,67 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Myrouter1
+!
+!
+!
+!
+ip subnet-zero
+!
+ip cef
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0/0
+ description Serial interface on Router1
+ ip address 10.1.1.1 255.255.255.0
+ no ip directed-broadcast
+!
+interface Serial0/0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password test
+!
+!
+no scheduler allocate
+end
+
